@@ -9,6 +9,6 @@ All details regarding this case study can be found in my portfolio website.
 - CTEs
 - Subqueries
 - Window Function (ranking)
-**Tech Stack**
+\n**Tech Stack**
 - MySQL Workbench
 - MySQL
