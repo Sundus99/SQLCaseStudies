@@ -75,6 +75,18 @@ SELECT customer_id, COUNT(DISTINCT order_date)
 FROM agg_sales
 GROUP BY customer_id;
 
+-- 2b) What days of the week does each customer vists the restaurant the most?
+SELECT customer_id, DAYNAME(order_date) AS day_of_week, COUNT(DAYNAME(order_date)) AS num_orders_by_day
+FROM agg_sales
+GROUP BY customer_id, day_of_week
+ORDER BY customer_id ASC, num_orders_by_day DESC;
+
+-- 2c) What are the least and most busiest days?
+SELECT DAYNAME(order_date) AS day_of_week, COUNT(DAYNAME(order_date)) AS num_orders_by_day
+FROM agg_sales
+GROUP BY day_of_week
+ORDER BY num_orders_by_day DESC;
+
 -- 3. What was the first item from the menu purchased by each customer?
 SELECT customer_id, order_date, product_name
 FROM agg_sales
